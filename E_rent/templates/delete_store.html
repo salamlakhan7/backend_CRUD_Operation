@@ -1,0 +1,19 @@
+
+
+<h1> Display all stores list </h1>
+      <h2> Name       |      Type      |         Location </h2>
+
+{% for i in lists %}
+<p>
+  {{ i.store_name }} - {{ i.Store_type }} - {{ i.store_location }}
+
+  <form method="post" action="{% url 'delete_store' i.id %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+  </form>
+
+  <a href="{% url 'update_store_info' i.id %}">Update</a>
+</p>
+{% empty %}
+<p>No Active Store Available</p>
+{% endfor %}
