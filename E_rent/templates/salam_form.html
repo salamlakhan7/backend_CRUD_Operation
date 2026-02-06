@@ -1,0 +1,37 @@
+
+<h1> create a salam form </h1>
+
+<form method="post"> 
+    {% csrf_token %}
+    {{form.as_p}}
+<button type="submit" > Submit </button>
+</form>
+
+{% comment %} 
+<h1>Create Salam Form</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name }}<br>
+        {{ form.name.errors }}
+    </p>
+
+    <p>
+        {{ form.stack.label }}<br>
+        {{ form.stack }}<br>
+        {{ form.stack.errors }}
+    </p>
+
+    <p>
+        {{ form.experience.label }}<br>
+        {{ form.experience }}<br>
+        {{ form.experience.errors }}
+    </p>
+
+    <button type="submit">Submit</button>
+</form> {% endcomment %}

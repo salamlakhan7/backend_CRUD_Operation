@@ -1,0 +1,24 @@
+
+<h1> Display all salam names </h1>
+
+{% if messages %}
+  {% for message in messages %}
+    <p>{{ message }}</p>
+  {% endfor %}
+{% endif %}
+
+{% for i in salam %}
+<form method="post" action="{% url 'delete_salam' i.id %}" onsubmit="return confirm('Are you sure you want to delete this record?');">
+    {% csrf_token %}
+    {{i.name}} -- {{i.stack}} -- {{i.experience}}
+
+    <button type="submit" > Delete </button>
+</form>
+    <a href="{% url 'update_salam_form'  i.id %}" > Update information </a>
+
+{% empty %}
+    no salam data Available 
+
+{% endfor %}
+
+    
