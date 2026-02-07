@@ -1,0 +1,19 @@
+
+<h1> Display All offices List </h1>
+
+{% if messages %}
+  {% for message in messages %}
+    <p>{{ message }}</p>
+  {% endfor %}
+{% endif %}
+
+{% for f in offices %}
+ <form method="post" action="{% url 'del_salamoffice' f.id %}" onsubmit="return confirm('Are you sure you want to delete this record?');" >
+    {% csrf_token %}
+   {{f.office_name}} -- {{f.office_location}} -- {{f.office_workers}}
+   <button type="submit" > Delete </button>
+</form>
+<a href="{% url 'update_Salamoffice_form' f.id %}" > Update Info </a>
+{% empty %}
+      No salam offices are avaliable 
+{% endfor %}

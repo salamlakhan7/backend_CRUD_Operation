@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Ghotki_Ecommerce, Salam
+from .models import Ghotki_Ecommerce, Salam , Salamoffices
 
 class Ghotki_EcommerceForm(forms.ModelForm):
     class Meta:
@@ -18,3 +18,10 @@ class SalamForm(forms.ModelForm):
         if experience < 1 or experience > 5:
             raise forms.ValidationError("Experience must be between 1 and 5.")
         return experience
+    
+class SalamofficesForm(forms.ModelForm):
+    class Meta:
+        model = Salamoffices
+        fields = ["office_name","office_location","office_workers","active_offices"]
+
+    

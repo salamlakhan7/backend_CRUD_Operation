@@ -25,3 +25,16 @@ class Salam(models.Model):
     experience = models.IntegerField()
     def __str__(self):
         return self.name
+    
+    
+######################### part 3 ##################################
+
+class Salamoffices(models.Model):
+    office_name = models.CharField(max_length=20)
+    office_location = models.CharField(max_length=30)
+    office_workers = models.IntegerField(validators=[MinValueValidator(20),MaxValueValidator(50)])
+    active_offices = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.office_name 
+    

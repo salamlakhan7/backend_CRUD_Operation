@@ -4,8 +4,8 @@ from django.http import HttpRequest,HttpResponse
 from streamlit import form
 
 # Create your views here.
-from .models import Ghotki_Ecommerce, Salam
-from .forms import Ghotki_EcommerceForm, SalamForm
+from .models import Ghotki_Ecommerce, Salam, Salamoffices
+from .forms import Ghotki_EcommerceForm, SalamForm, SalamofficesForm
 
 def create_form(request):
     form = Ghotki_EcommerceForm()
@@ -79,3 +79,41 @@ def update_salam_form(request,id):
     else:
         form = SalamForm(instance=salam )
     return render(request ,"update_salam_form.html",{"form":form})
+
+######################### part 3 ########################################
+
+def Dis_Salamoffice_form(request):
+    offices = Salamoffices.objects.filter(office_workers__gte=20 ,active_offices=True)
+    return render(request ,"Dis_Salamoffice_form.html",{"offices":offices})
+
+def Salamoffice_form(request):
+    form = SalamofficesForm()
+    if request.method=="POST":
+        form = SalamofficesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SalamofficesForm()
+    else:
+        form = SalamofficesForm()
+    return render(request,"Salamoffice_form.html", {"form":form})
+
+
+def del_salamoffice(request,id):
+    offices  = get_object_or_404(Salamoffices , id=id)
+    if request.method=="POST":
+        offices.delete()
+        messages.success(request,"Delecte Action perofrmed successfully")
+        return redirect ("Dis_Salamoffice_form")
+    
+    
+def update_Salamoffice_form(request,id):
+    offices = get_object_or_404(Salamoffices,id=id)
+    if request.method=="POST":
+        form = SalamofficesForm(request.POST, instance=offices)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Update Action Performed")
+            return redirect("Dis_Salamoffice_form")
+    else:
+        form = SalamofficesForm(instance=offices)
+    return render(request,"Salamoffice_form.html", {"form":form})
