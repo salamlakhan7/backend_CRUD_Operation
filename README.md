@@ -531,4 +531,3 @@ This project is licensed under the **MIT License**.
 
 ---
 
-If you want, next I can add **Exam 2 section** later the same way 😄👊🔥
