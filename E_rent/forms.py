@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Ghotki_Ecommerce, Salam , Salamoffices
+from .models import Ghotki_Ecommerce, RestaurantProfile, Salam , Salamoffices
 
 class Ghotki_EcommerceForm(forms.ModelForm):
     class Meta:
@@ -22,6 +22,10 @@ class SalamForm(forms.ModelForm):
 class SalamofficesForm(forms.ModelForm):
     class Meta:
         model = Salamoffices
-        fields = ["office_name","office_location","office_workers","active_offices"]
-
-    
+       # fields = ["office_name","office_location","office_workers","active_offices"]
+        fields = "__all__"
+        
+class RestaurantProfileForm(forms.ModelForm):
+    class Meta:
+        model = RestaurantProfile
+        fields = "__all__"

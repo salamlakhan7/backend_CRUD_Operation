@@ -1,5 +1,7 @@
+{% load static %}
 
 <h1> Display All offices List </h1>
+{% comment %} <img src="{% static 'images/officeimg1.jpg' %}" alt="Salam Office" width="300" height="200"> {% endcomment %}
 
 {% if messages %}
   {% for message in messages %}
@@ -10,7 +12,12 @@
 {% for f in offices %}
  <form method="post" action="{% url 'del_salamoffice' f.id %}" onsubmit="return confirm('Are you sure you want to delete this record?');" >
     {% csrf_token %}
-   {{f.office_name}} -- {{f.office_location}} -- {{f.office_workers}}
+    {% if f.office_image %}
+        <img src="{{ f.office_image.url }}" alt="{{ f.office_name }}" width="200">
+    {% else %}
+        <img src="{% static 'images/default_office.jpg' %}" alt="Default Office" width="200">
+    {% endif %}
+    {{f.office_name}} -- {{f.office_location}} -- {{f.office_workers}}
    <button type="submit" > Delete </button>
 </form>
 <a href="{% url 'update_Salamoffice_form' f.id %}" > Update Info </a>

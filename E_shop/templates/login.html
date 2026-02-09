@@ -1,0 +1,66 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Shop</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-xl">
+
+    <!-- Heading -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+        welcome login here
+      </h1>
+      <p class="mt-3 text-slate-300 text-lg">
+        Login to manage your shop and access your dashboard 🔐
+      </p>
+    </div>
+
+    <!-- Card -->
+    <div class="relative">
+      <!-- Glow border -->
+      <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 blur opacity-30"></div>
+
+      <div class="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl p-8 md:p-10">
+
+        <!-- Form -->
+        <form method="post" class="space-y-6">
+          {% csrf_token %}
+
+          <div class="space-y-4 text-slate-200">
+            {{form.as_p}}
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 rounded-2xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30 hover:shadow-purple-500/40 hover:scale-[1.02] active:scale-[0.98] transition duration-200"
+          >
+            login
+          </button>
+        </form>
+
+        <!-- Signup link -->
+        <p class="mt-6 text-center text-slate-300">
+          Don't have an account?
+          <a
+            href="{% url 'signup_view' %}"
+            class="text-indigo-300 font-semibold hover:text-indigo-200 underline underline-offset-4"
+          >
+            Signup
+          </a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center mt-6 text-xs text-slate-500">
+      Secure login • CSRF protected • Django powered
+    </p>
+
+  </div>
+</div>

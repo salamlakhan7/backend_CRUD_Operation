@@ -30,6 +30,7 @@ class Salam(models.Model):
 ######################### part 3 ##################################
 
 class Salamoffices(models.Model):
+    office_image = models.ImageField(upload_to="offices/",null=True, blank=True)
     office_name = models.CharField(max_length=20)
     office_location = models.CharField(max_length=30)
     office_workers = models.IntegerField(validators=[MinValueValidator(20),MaxValueValidator(50)])
@@ -38,3 +39,30 @@ class Salamoffices(models.Model):
     def __str__(self):
         return self.office_name 
     
+class RestaurantProfile(models.Model):
+    restaurant_name = models.CharField(max_length=20)
+    city = models.CharField(max_length=10)
+    rating=models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(10)])
+    is_open = models.BooleanField(default=False)
+    logo =models.ImageField(upload_to="restaurants/", null=True , blank=True)
+    
+    def __str__(self):
+        return self.restaurant_name
+    
+
+
+# 🧠 Important: Django already has auth built-in
+
+# You don’t need JWT yet.
+
+# We’ll use:
+
+# UserCreationForm
+
+# AuthenticationForm
+
+# login()
+
+# logout()
+
+# @login_required

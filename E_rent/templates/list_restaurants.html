@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<h1>Dashboard</h1>
+
+<p>Welcome {{ request.user.username }} 👋</p>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+<h1> Display list of all registered and opened Resturants </h1>
+
+{% for r in lists %}
+   <form method="post" action="{% url 'delelte_resturants' r.id %}" onsubmit="return confirm('are you sure ! to delete this ?');">
+    {% csrf_token %}
+    {{r.restaurant_name}} --{{r.city}} -- {{r.rating}}
+
+    <div>
+    {% if r.logo %} 
+    <img src="{{ r.logo.url }}" alt="{{ r.logo }}" width="200">
+    {% else %}
+     <img src="{% static 'images/default_office.jpg' %}" alt="Default Office" width="200">
+    {% endif %}
+    </div>
+
+     <button type="submit" > Delete </button>
+   </form>
+
+   <a href="{% url 'update_resturants' r.id %}" type="submit" > Update Information </a>
+{% empty %}
+      No Resturants Available 
+{% endfor %}

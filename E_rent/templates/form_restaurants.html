@@ -1,0 +1,8 @@
+
+<h1> create form to register your restuanrants </h1>
+
+<form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" > Submit form </button>
+</form>
