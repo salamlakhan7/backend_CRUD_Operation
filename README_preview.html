@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>README Preview</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; padding: 24px; max-width: 980px; margin: auto; }
+img { max-width: 100%; height: auto; display: block; margin: 12px 0; }
+.preview-center { text-align: center; }
+</style>
+</head>
+<body>
+<hr />
+<h1 id="django-crud-office-management-system">🏢 Django CRUD – Office Management System</h1>
+<div align="center">
+
+![Django](https://img.shields.io/badge/Django-5.x-success?style=for-the-badge\&logo=django)
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge\&logo=python)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+
+**A clean and beginner-friendly Django CRUD project focused on real-world fundamentals — not unnecessary complexity.**
+
+[Features](#-features) • [Screenshots](#-screenshots) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure)
+
+</div>
+
+<hr />
+<h2 id="features">🌟 Features</h2>
+<h3 id="core-crud-functionality">Core CRUD Functionality</h3>
+<ul>
+<li>➕ <strong>Create Office Records</strong></li>
+<li>📋 <strong>Read / List Offices</strong></li>
+<li>✏️ <strong>Update Office Information</strong></li>
+<li>❌ <strong>Delete with Confirmation</strong></li>
+</ul>
+<h3 id="media-handling">Media Handling</h3>
+<ul>
+<li>🖼 <strong>User Image Uploads</strong> using <code>ImageField</code></li>
+<li>📁 Images stored inside <code>media/offices/</code></li>
+<li>🧠 Automatic path handling by Django</li>
+<li>🖥 Images rendered dynamically in templates</li>
+</ul>
+<h3 id="django-fundamentals">Django Fundamentals</h3>
+<ul>
+<li>📦 App-level <code>templates</code> &amp; <code>static</code></li>
+<li>📝 Django Forms</li>
+<li>🔐 CSRF protection</li>
+<li>💬 Django messages framework</li>
+</ul>
+<hr />
+<h2 id="screenshots">📸 Screenshots</h2>
+<p>Below are project screenshots (images live in the <code>screenshots/</code> folder). Click any thumbnail to open the full-size image.</p>
+<ul>
+<li>
+<p><strong>Landing page</strong> — Public landing / entry point</p>
+<p><a href="screenshots/land_page.JPG"><img alt="Landing page" src="screenshots/land_page.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Signup page</strong> — User registration form</p>
+<p><a href="screenshots/signup_page.JPG"><img alt="Signup page" src="screenshots/signup_page.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Login page</strong> — User authentication</p>
+<p><a href="screenshots/login_page.JPG"><img alt="Login page" src="screenshots/login_page.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Create Shop Form</strong> — Form to add a new shop (includes image upload)</p>
+<p><a href="screenshots/form_create_page.JPG"><img alt="Create Shop Form" src="screenshots/form_create_page.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Display Shop List</strong> — Public list of shops with details</p>
+<p><a href="screenshots/display_shop_list.JPG"><img alt="Display Shop List" src="screenshots/display_shop_list.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Admin — Control Shops</strong> — Admin view to manage shops</p>
+<p><a href="screenshots/Admin_control_shops.JPG"><img alt="Admin control shops" src="screenshots/Admin_control_shops.JPG" /></a></p>
+</li>
+<li>
+<p><strong>Admin — Check Users</strong> — Admin users overview</p>
+<p><a href="screenshots/admin_check_users.JPG"><img alt="Admin check users" src="screenshots/admin_check_users.JPG" /></a></p>
+</li>
+</ul>
+<p>Open the <code>screenshots/</code> folder to view the originals or adjust sizes as you prefer.</p>
+<hr />
+<h2 id="quick-start">🚀 Quick Start</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Python <strong>3.10+</strong> (tested on 3.12)</li>
+<li>pip</li>
+<li>Virtual Environment (recommended)</li>
+</ul>
+<hr />
+<h2 id="installation">⚙️ Installation</h2>
+<ol>
+<li><strong>Clone the repository</strong></li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/salamlakhan7/backend_CRUD_Operation.git
+cd backend_CRUD_Operation
+</code></pre>
+<ol>
+<li><strong>Create &amp; activate virtual environment</strong></li>
+</ol>
+<pre><code class="language-bash">python -m venv venv
+venv\Scripts\activate
+</code></pre>
+<ol>
+<li><strong>Install Django</strong></li>
+</ol>
+<pre><code class="language-bash">pip install django pillow
+</code></pre>
+<ol>
+<li><strong>Run migrations</strong></li>
+</ol>
+<pre><code class="language-bash">python manage.py migrate
+</code></pre>
+<ol>
+<li><strong>Run the server</strong></li>
+</ol>
+<pre><code class="language-bash">python manage.py runserver
+</code></pre>
+<ol>
+<li><strong>Open in browser</strong></li>
+</ol>
+<pre><code>http://127.0.0.1:8000/
+</code></pre>
+<hr />
+<h2 id="usage">📖 Usage</h2>
+<h3 id="office-management-flow">Office Management Flow</h3>
+<ol>
+<li>
+<p>Add a new office with:</p>
+</li>
+<li>
+<p>Office name</p>
+</li>
+<li>Location</li>
+<li>Number of workers</li>
+<li>Office image</li>
+<li>View all offices in a list</li>
+<li>Update office details</li>
+<li>Delete office with confirmation popup</li>
+</ol>
+<hr />
+<h2 id="media-configuration-important-part">🖼 Media Configuration (Important Part)</h2>
+<h3 id="settingspy"><code>settings.py</code></h3>
+<pre><code class="language-python">MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+</code></pre>
+<h3 id="main-urlspy">Main <code>urls.py</code></h3>
+<pre><code class="language-python">from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+</code></pre>
+<h3 id="template-usage">Template Usage</h3>
+<pre><code class="language-django">&lt;img src=&quot;{{ f.office_image.url }}&quot; alt=&quot;{{ f.office_name }}&quot; width=&quot;200&quot;&gt;
+</code></pre>
+<p>📁 Uploaded images are stored automatically in:</p>
+<pre><code>media/offices/
+</code></pre>
+<hr />
+<h2 id="tech-stack">🛠 Tech Stack</h2>
+<h3 id="backend">Backend</h3>
+<ul>
+<li><strong>Django</strong> – Web framework</li>
+<li><strong>Python 3.12</strong></li>
+<li><strong>SQLite3</strong> – Development database</li>
+</ul>
+<h3 id="frontend">Frontend</h3>
+<ul>
+<li><strong>HTML (Django Templates)</strong></li>
+<li><strong>Basic CSS</strong></li>
+</ul>
+<hr />
+<h2 id="project-structure">📁 Project Structure</h2>
+<pre><code>backend_CRUD_Operation/
+├── backend_CRUD_Operation/   # Project settings
+├── E_rent/                   # Main app
+│   ├── templates/
+│   ├── static/
+│   ├── forms.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+├── media/
+│   └── offices/              # Uploaded images
+├── db.sqlite3
+├── manage.py
+└── README.md
+</code></pre>
+<hr />
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
+<p>This project was built to:</p>
+<ul>
+<li>Master <strong>Django CRUD basics</strong></li>
+<li>Understand <strong>MEDIA vs STATIC</strong></li>
+<li>Practice <strong>clean app-level structure</strong></li>
+<li>Build confidence before complex systems</li>
+</ul>
+<hr />
+<h2 id="exam-detail-mini-project-exam-1">🧾 Exam Detail (Mini Project Exam 1)</h2>
+<h3 id="django-mini-project-exam-summary-level-1">🧾 Django Mini Project Exam Summary (Level 1)</h3>
+<p>✅ <strong>Exam Title:</strong>
+<strong>Local Shops Directory (Mini OLX Style)</strong></p>
+<hr />
+<h3 id="1-what-i-asked-you-to-build-exam-requirements">1️⃣ What I asked you to build (Exam Requirements)</h3>
+<p>I were required to build a complete Django mini project using:</p>
+<p>✅ Topics included</p>
+<ul>
+<li>CRUD (Create, Read, Update, Delete)</li>
+<li>ORM filtering (<code>rating__gte</code>, <code>is_verified=True</code>)</li>
+<li>Forms (save + update)</li>
+<li>Delete confirmation (POST + <code>csrf_token</code>)</li>
+<li>Messages framework</li>
+<li>Static fallback image</li>
+<li>Media upload + display</li>
+<li>
+<p>Media cleanup:</p>
+</li>
+<li>
+<p>delete old image when updating</p>
+</li>
+<li>delete image when deleting record</li>
+<li>
+<p>Authentication:</p>
+</li>
+<li>
+<p>Signup</p>
+</li>
+<li>Login</li>
+<li>Logout</li>
+<li>Protected pages (<code>@login_required</code>)</li>
+</ul>
+<hr />
+<h3 id="2-what-i-built-my-answer">2️⃣ What I built (My Answer)</h3>
+<p>✅ <strong>A) I created a new app</strong>
+Instead of mixing everything in one app, I created:</p>
+<ul>
+<li><code>E_shop</code> app</li>
+</ul>
+<p>And kept My old work in:</p>
+<ul>
+<li><code>E_rent</code></li>
+</ul>
+<p>This was a professional decision.</p>
+<hr />
+<p>✅ <strong>B) My model (LocalShop)</strong></p>
+<p>I built:</p>
+<pre><code class="language-python">class LocalShop(models.Model):
+    shop_name   = models.CharField(max_length=30)
+    city        = models.CharField(max_length=10)
+    category    = models.CharField(max_length=10)
+    rating      = models.IntegerField(validators=[MinValueValidator(0),MaxValueValidator(10)])
+    is_verified = models.BooleanField(default=False)
+    shop_logo   = models.ImageField(upload_to=&quot;shops/&quot;, null=True, blank=True)
+    created_at  = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<p>⭐ What was perfect here:</p>
+<ul>
+<li>correct field types</li>
+<li>correct <code>upload_to="shops/"</code></li>
+<li>correct validators</li>
+<li>correct timestamps</li>
+</ul>
+<hr />
+<h3 id="3-my-views-core-exam-logic">3️⃣ My Views (Core Exam Logic)</h3>
+<p>✅ <strong>Create Shop (Protected)</strong>
+I correctly used:</p>
+<pre><code class="language-python">@login_required(login_url=&quot;login_view&quot;)
+</code></pre>
+<p>And correctly handled image upload:</p>
+<pre><code class="language-python">LocalShopForm(request.POST, request.FILES)
+</code></pre>
+<hr />
+<p>✅ <strong>Shop List (Filter Query)</strong>
+I correctly fetched shops:</p>
+<pre><code class="language-python">LocalShop.objects.filter(rating__gte=7, is_verified=True)
+</code></pre>
+<hr />
+<p>✅ <strong>Delete Shop (Real-world Media Cleanup)</strong>
+I correctly implemented:</p>
+<ul>
+<li>delete file from <code>media/</code></li>
+<li>then delete record</li>
+</ul>
+<pre><code class="language-python">if os.path.exists(shop.shop_logo.path):
+    os.remove(shop.shop_logo.path)
+shop.delete()
+</code></pre>
+<p>This is a real-world developer-level skill.</p>
+<hr />
+<p>✅ <strong>Update Shop (Real-world Media Cleanup)</strong>
+I correctly stored old image before update:</p>
+<pre><code class="language-python">old_shop = shop.shop_logo
+</code></pre>
+<p>Then after saving, I removed old file if new uploaded:</p>
+<pre><code class="language-python">if &quot;shop_logo&quot; in request.FILES and old_shop:
+    if old_shop.path != updated_shop.shop_logo.path:
+        os.remove(old_shop.path)
+</code></pre>
+<p>This was one of the hardest parts — and I did it.</p>
+<hr />
+<h3 id="4-authentication-phase-2">4️⃣ Authentication (Phase 2)</h3>
+<p>✅ <strong>Signup</strong>
+ used:</p>
+<ul>
+<li><code>UserCreationForm</code></li>
+<li><code>login(request, user)</code></li>
+</ul>
+<p>Signup worked.</p>
+<hr />
+<p>✅ <strong>Login</strong>
+ used:</p>
+<ul>
+<li><code>AuthenticationForm</code></li>
+<li><code>form.get_user()</code></li>
+<li><code>login(request, user)</code></li>
+</ul>
+<p>Login worked.</p>
+<hr />
+<p>✅ <strong>Logout</strong>
+I made logout view and redirect.</p>
+<hr />
+<h3 id="5-templates-my-html-logic">5️⃣ Templates (MY HTML Logic)</h3>
+<p>✅ I correctly used:</p>
+<ul>
+<li><code>{% csrf_token %}</code></li>
+<li>delete confirmation popup</li>
+<li>media display:</li>
+</ul>
+<pre><code class="language-django">&lt;img src=&quot;{{ shop.shop_logo.url }}&quot;&gt;
+</code></pre>
+<p>✅ I also correctly handled fallback static image:</p>
+<pre><code class="language-django">{% if shop.shop_logo %}
+    &lt;img src=&quot;{{ shop.shop_logo.url }}&quot;&gt;
+{% else %}
+    &lt;img src=&quot;{% static 'images/default_office.jpg' %}&quot;&gt;
+{% endif %}
+</code></pre>
+<hr />
+<h3 id="6-problems-i-faced-exam-mistakes">6️⃣ Problems I faced (Exam mistakes)</h3>
+<p>These were NOT major logic issues — mostly cleanup issues.</p>
+<p>❌ Mistake 1: Wrong messages import
+I accidentally wrote:</p>
+<pre><code class="language-python">from pyexpat.errors import messages
+</code></pre>
+<p>Correct is:</p>
+<pre><code class="language-python">from django.contrib import messages
+</code></pre>
+<hr />
+<p>❌ Mistake 2: Unnecessary import
+ had:</p>
+<pre><code class="language-python">from streamlit import form
+</code></pre>
+<p>Not needed in Django.</p>
+<hr />
+<p>❌ Mistake 3: Logout message bug
+ wrote:</p>
+<pre><code class="language-python">messages.success(&quot;you're logout&quot;)
+</code></pre>
+<p>Correct:</p>
+<pre><code class="language-python">messages.success(request, &quot;You're logged out&quot;)
+</code></pre>
+<hr />
+<p>❌ Mistake 4: URL name mismatch
+ template used:</p>
+<pre><code class="language-django">{% url 'logout' %}
+</code></pre>
+<p>But My urls had:</p>
+<pre><code class="language-python">name=&quot;logout_view&quot;
+</code></pre>
+<p>So correct should be:</p>
+<pre><code class="language-django">{% url 'logout_view' %}
+</code></pre>
+<hr />
+<p>❌ Mistake 5: Signup redirect
+I did:</p>
+<pre><code class="language-python">login(request, user)
+return redirect(&quot;login_view&quot;)
+</code></pre>
+<p>Better is:</p>
+<pre><code class="language-python">return redirect(&quot;shop_list&quot;)
+</code></pre>
+<p>Because user is already logged in.</p>
+<hr />
+<h3 id="7-migration-issue-i-faced">7️⃣ Migration issue (I faced)</h3>
+<p>I also faced a very real Django problem:</p>
+<p><code>auto_now_add=True</code> requires default for old rows</p>
+<p>learned:</p>
+<ul>
+<li>Django needs a value for existing database records</li>
+<li>You must choose option 1 and press enter</li>
+<li>OR use <code>default=timezone.now</code></li>
+</ul>
+<hr />
+<h3 id="8-my-final-exam-score">8️⃣ My Final Exam Score</h3>
+<p>First score: <strong>88 / 100</strong></p>
+<p>Then My explained , used a separate app (<code>E_shop</code>)
+So final score became:</p>
+<p>✅ <strong>Final Score: 91 / 100 🔥</strong></p>
+<hr />
+<h3 id="final-conclusion">🏆 Final Conclusion</h3>
+<p>I proved I can build:</p>
+<p>✅ Django CRUD
+✅ ORM filtering
+✅ Auth system
+✅ Real media handling
+✅ Media cleanup (update + delete)
+✅ multi-app project structure</p>
+<hr />
+<h2 id="author">👤 Author</h2>
+<p><strong>Abdul Salam</strong>
+Backend Django Developer
+🔗 GitHub: <a href="https://github.com/salamlakhan7">https://github.com/salamlakhan7</a></p>
+<hr />
+<h2 id="license">📝 License</h2>
+<p>This project is licensed under the <strong>MIT License</strong>.</p>
+<hr />
+<div align="center">
+
+**Built with Django ❤️**
+⭐ Star this repo if it helped your Django journey!
+
+</div>
+
+<hr />
+</body>
+</html>

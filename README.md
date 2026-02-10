@@ -44,9 +44,37 @@
 ---
 
 ## 📸 Screenshots
+Below are project screenshots (images live in the `screenshots/` folder). Click any thumbnail to open the full-size image.
 
-> Screenshots can be added inside a `screenshots/` folder
-> and referenced here later.
+- **Landing page** — Public landing / entry point
+
+    [![Landing page](screenshots/land_page.JPG)](screenshots/land_page.JPG)
+
+- **Signup page** — User registration form
+
+    [![Signup page](screenshots/signup_page.JPG)](screenshots/signup_page.JPG)
+
+- **Login page** — User authentication
+
+    [![Login page](screenshots/login_page.JPG)](screenshots/login_page.JPG)
+
+- **Create Shop Form** — Form to add a new shop (includes image upload)
+
+    [![Create Shop Form](screenshots/form_create_page.JPG)](screenshots/form_create_page.JPG)
+
+- **Display Shop List** — Public list of shops with details
+
+    [![Display Shop List](screenshots/display_shop_list.JPG)](screenshots/display_shop_list.JPG)
+
+- **Admin — Control Shops** — Admin view to manage shops
+
+    [![Admin control shops](screenshots/Admin_control_shops.JPG)](screenshots/Admin_control_shops.JPG)
+
+- **Admin — Check Users** — Admin users overview
+
+    [![Admin check users](screenshots/admin_check_users.JPG)](screenshots/admin_check_users.JPG)
+
+Open the `screenshots/` folder to view the originals or adjust sizes as you prefer.
 
 ---
 
